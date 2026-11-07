@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fisiogym Clinik | Dimagrimento, Riabilitazione e Posturale a Colli al Metauro</title>
+<meta name="description" content="Fisiogym Clinik a Colli al Metauro (PU): personal training, dimagrimento, riabilitazione e ginnastica posturale con Stefano. Struttura accessibile e ambiente riservato.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #0d0d0d; --bg2: #1a1a1a; --line: #2a2a2a;
+  --text: #f5f5f2; --muted: #a1a19c;
+  --neon: #ff5e00; --glow: rgba(255,94,0,.45); --on-neon: #120500;
+  --r: 12px; --t: .3s;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 5rem); }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 1.0625rem; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: rgba(13,13,13,.8); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); z-index: 50; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--neon); outline-offset: 3px; }
+.wrap { width: min(100% - 2.5rem, 72rem); margin-inline: auto; }
+h1, h2, h3 { margin: 0; font-weight: 900; letter-spacing: -.03em; line-height: 1.04; }
+h2 { font-size: clamp(2rem, 6vw, 3.3rem); margin-bottom: 1rem; }
+h3 { font-size: 1.3rem; letter-spacing: -.01em; }
+p { margin: 0 0 1rem; }
+section { padding: 5rem 0; position: relative; }
+.head { max-width: 42rem; margin-bottom: 3rem; }
+.head p { color: var(--muted); font-size: 1.15rem; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; background: var(--neon); color: var(--on-neon); font: 700 1rem var(--font); padding: .95rem 1.7rem; border: 0; border-radius: var(--r); text-decoration: none; cursor: pointer; transition: transform var(--t), box-shadow var(--t), background var(--t); box-shadow: 0 6px 24px -8px var(--glow); }
+.btn:hover { transform: translateY(-3px); background: #ff7a2b; box-shadow: 0 14px 34px -8px var(--glow); }
+.btn:active { transform: scale(.98); }
+.btn.sm { padding: .6rem 1.1rem; font-size: .92rem; }
+.btn.block { width: 100%; }
+.btn svg { width: 1.3rem; height: 1.3rem; fill: currentColor; flex: none; }
+
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: rgba(13,13,13,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.07); }
+.bar { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
+.logo { font-weight: 900; letter-spacing: .1em; text-decoration: none; font-size: 1rem; }
+.logo i { font-style: normal; color: var(--neon); }
+
+.hero { min-height: calc(100svh - 4rem); display: grid; align-items: center; padding: 4rem 0 5rem; overflow: hidden; isolation: isolate; }
+.hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; filter: blur(90px); z-index: -1; }
+.hero::before { width: 34rem; height: 34rem; right: -10rem; top: -6rem; background: radial-gradient(circle, rgba(255,94,0,.48), transparent 65%); animation: drift 14s ease-in-out infinite alternate; }
+.hero::after { width: 26rem; height: 26rem; left: -10rem; bottom: -8rem; background: radial-gradient(circle, rgba(255,69,0,.2), transparent 65%); animation: drift 18s ease-in-out infinite alternate-reverse; }
+.grid-bg { position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse at 50% 40%, #000 20%, transparent 75%); }
+@keyframes drift { to { transform: translate(-4rem, 3rem) scale(1.15); } }
+.hero h1 { font-size: clamp(2.7rem, 10vw, 6.2rem); max-width: 16ch; }
+.hero h1 em { font-style: normal; color: var(--neon); display: block; }
+.hero .sub { font-size: clamp(1.05rem, 2.5vw, 1.3rem); color: var(--muted); max-width: 44rem; margin: 1.75rem 0 2.5rem; }
+.pulse { animation: pulse 2.2s infinite; padding: 1.15rem 1.8rem; font-size: 1.05rem; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,94,0,.6); } 70% { box-shadow: 0 0 0 22px rgba(255,94,0,0); } 100% { box-shadow: 0 0 0 0 rgba(255,94,0,0); } }
+.loc { margin-top: 1.5rem; font-size: .95rem; color: var(--muted); }
+
+.alt { background: var(--bg2); border-block: 1px solid var(--line); }
+.cols { display: grid; gap: 1.25rem; }
+.card { background: var(--bg2); border: 1px solid var(--line); border-radius: var(--r); padding: 2rem; display: flex; flex-direction: column; transition: transform var(--t), border-color var(--t), box-shadow var(--t); }
+.card:hover { transform: translateY(-6px); border-color: rgba(255,94,0,.6); box-shadow: 0 22px 44px -22px #000; }
+.alt .card { background: var(--bg); }
+.ico { width: 3.2rem; height: 3.2rem; border-radius: var(--r); display: grid; place-items: center; background: rgba(255,94,0,.12); color: var(--neon); margin-bottom: 1.25rem; }
+.ico svg { width: 1.65rem; height: 1.65rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.card p { color: var(--muted); }
+.tag { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: .4rem; font-weight: 700; font-size: .88rem; color: var(--neon); border: 1.5px solid var(--neon); padding: .45rem 1rem; border-radius: 99px; text-decoration: none; transition: background var(--t), color var(--t); }
+.tag:hover { background: var(--neon); color: var(--on-neon); }
+
+.review { max-width: 52rem; margin-inline: auto; background: linear-gradient(160deg, #241509, var(--bg) 60%); border: 1.5px solid var(--neon); border-radius: var(--r); padding: 2.5rem 1.75rem; box-shadow: 0 0 60px -18px var(--glow); position: relative; }
+.review::before { content: "“"; position: absolute; top: -.2rem; left: 1.4rem; font-size: 7rem; line-height: 1; font-weight: 900; color: var(--neon); opacity: .9; }
+.review blockquote { margin: 2rem 0 1.75rem; font-size: clamp(1.05rem, 2.4vw, 1.3rem); line-height: 1.65; }
+.author { display: flex; align-items: center; gap: 1rem; }
+.av { width: 3rem; height: 3rem; border-radius: 50%; border: 1.5px solid var(--neon); display: grid; place-items: center; font-weight: 800; background: var(--bg2); flex: none; }
+.author span { display: block; color: var(--muted); font-size: .9rem; }
+.stars { color: var(--neon); letter-spacing: .12em; }
+
+.contact { display: grid; gap: 2.5rem; align-items: start; }
+form, .info { background: var(--bg2); border: 1px solid var(--line); border-radius: var(--r); padding: 2rem 1.6rem; box-shadow: 0 30px 60px -30px #000; }
+form { display: grid; gap: 1.2rem; }
+label { display: grid; gap: .45rem; font-weight: 600; font-size: .92rem; }
+input, textarea { font: inherit; font-size: 1rem; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: var(--r); padding: 1rem 1.1rem; width: 100%; transition: border-color var(--t), box-shadow var(--t); }
+textarea { min-height: 7.5rem; resize: vertical; }
+input::placeholder, textarea::placeholder { color: #66665f; }
+input:focus, textarea:focus { outline: none; border-color: var(--neon); box-shadow: 0 0 0 4px rgba(255,94,0,.22); }
+.fine { font-size: .82rem; color: var(--muted); margin: 0; text-align: center; }
+.info h3 { margin-bottom: 1.25rem; }
+.info dl { margin: 0 0 1.75rem; display: grid; gap: 1rem; }
+.info dt { color: var(--muted); font-size: .85rem; font-weight: 600; }
+.info dd { margin: 0; font-weight: 600; }
+.info dd a { text-decoration: none; }
+.info dd a:hover { color: var(--neon); }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: .75rem .25rem; border-bottom: 1px solid var(--line); font-weight: 500; }
+td { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child th, tr:last-child td { border-bottom: 0; }
+tr.today th, tr.today td { color: var(--neon); font-weight: 800; }
+tr.closed td { color: var(--muted); }
+tr.today.closed td { color: var(--neon); }
+
+footer { border-top: 1px solid var(--line); padding: 3rem 0 2.5rem; text-align: center; color: var(--muted); font-size: .92rem; }
+.social { display: flex; justify-content: center; flex-wrap: wrap; gap: .75rem 1.75rem; margin-bottom: 1.5rem; }
+.social a { text-decoration: none; color: var(--text); font-weight: 600; transition: color var(--t); }
+.social a:hover { color: var(--neon); }
+footer p { max-width: 38rem; margin-inline: auto; }
+
+@media (min-width: 48rem) {
+  section { padding: 7rem 0; }
+  .cols { grid-template-columns: repeat(3, 1fr); }
+  .review { padding: 3.5rem 3.5rem 3rem; }
+  .contact { grid-template-columns: 1.05fr 1fr; gap: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero::before, .hero::after, .pulse { animation: none; }
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">FISIOGYM<i> </i>CLINIK</a>
+    <a class="btn sm" href="#contatti">Prenota Ora</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="grid-bg"></div>
+    <div class="wrap">
+      <h1>Riprendi il controllo del tuo corpo. <em>Ritrova la tua forma migliore.</em></h1>
+      <p class="sub">Il centro specializzato a Colli al Metauro in Dimagrimento, Riabilitazione e Ginnastica Posturale. Percorsi personalizzati in un ambiente tranquillo e accogliente, seguiti passo dopo passo dal Personal Trainer Stefano.</p>
+      <a class="btn pulse" id="wa-hero" href="https://wa.me/393400017311?text=Buongiorno%20Stefano%2C%20vorrei%20richiedere%20una%20consulenza." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+        Richiedi la tua Consulenza con Stefano
+      </a>
+      <p class="loc">Via Flaminia, 51 · Colli al Metauro (PU)</p>
+    </div>
+  </section>
+
+  <section class="alt" id="servizi">
+    <div class="wrap">
+      <div class="head">
+        <h2>Percorsi pensati per te</h2>
+        <p>Ogni programma parte da un colloquio con Stefano e si adatta ai tuoi obiettivi e ai tuoi tempi.</p>
+      </div>
+      <div class="cols">
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></svg></div>
+          <h3>Personal Training &amp; Dimagrimento</h3>
+          <p>Percorsi su misura per sbloccare il metabolismo e rimodellare il corpo.</p>
+          <a class="tag" href="https://wa.me/393400017311?text=Buongiorno%20Stefano%2C%20vorrei%20informazioni%20su%20Personal%20Training%20e%20Dimagrimento." target="_blank" rel="noopener">Richiedi Informazioni</a>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+          <h3>Riabilitazione &amp; Ginnastica Posturale</h3>
+          <p>Specializzati nella risoluzione di problemi alla schiena e dolori muscolari.</p>
+          <a class="tag" href="https://wa.me/393400017311?text=Buongiorno%20Stefano%2C%20vorrei%20informazioni%20su%20Riabilitazione%20e%20Ginnastica%20Posturale." target="_blank" rel="noopener">Richiedi Informazioni</a>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H4zM2 19h20"/></svg></div>
+          <h3>Corsi Online &amp; Smart Coaching</h3>
+          <p>Classi online e schede per allenarsi ovunque, con la supervisione di Stefano.</p>
+          <a class="tag" href="https://wa.me/393400017311?text=Buongiorno%20Stefano%2C%20vorrei%20informazioni%20sui%20Corsi%20Online%20e%20Smart%20Coaching." target="_blank" rel="noopener">Richiedi Informazioni</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="struttura">
+    <div class="wrap">
+      <div class="head">
+        <h2>Un centro davvero per tutti</h2>
+        <p>Qui non c’è il caos della palestra di massa. C’è uno spazio curato, accessibile e riservato, dove ci si sente a proprio agio fin dal primo giorno.</p>
+      </div>
+      <div class="cols">
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="4.5" r="1.8"/><path d="M11 8v6h5l2.5 5M11 11h4.5"/><circle cx="9.5" cy="17" r="4"/></svg></div>
+          <h3>Struttura 100% Accessibile in sedia a rotelle</h3>
+          <p>Ingresso, bagno attrezzato e parcheggio dedicati.</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11 12 3l9 8M5 10v10h14V10M10 20v-6h4v6"/></svg></div>
+          <h3>Ambiente Riservato</h3>
+          <p>Niente caos da palestra di massa: ti senti davvero a casa.</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/></svg></div>
+          <h3>Pagamenti Digitali</h3>
+          <p>Accettiamo carte di credito e di debito, e pagamenti NFC come Apple Pay e Google Pay.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="recensioni">
+    <div class="wrap">
+      <figure class="review" style="margin-block:0">
+        <div class="stars" role="img" aria-label="Valutazione 5 stelle su 5">★★★★★</div>
+        <blockquote>Professionista competente e preparato! Non ho mai amato la palestra, ma dopo anni di sedentarietà ho deciso di affidarmi a Stefano per migliorare la mia forma fisica e risolvere i problemi alla schiena. Dopo soli due mesi e mezzo posso dire di vedere già dei miglioramenti e vado in palestra con piacere. L’ambiente è tranquillo e accogliente, e con Stefano ci si sente davvero a casa. Lo consiglio a chiunque cerchi un personal trainer attento, professionale e capace di mettere le persone a proprio agio.</blockquote>
+        <figcaption class="author">
+          <div class="av">GG</div>
+          <div><strong>Giorgia Giovannini</strong><span>Recensione Google certificata · ⭐⭐⭐⭐⭐</span></div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="contatti">
+    <div class="wrap">
+      <div class="head">
+        <h2>Prenota la tua consulenza</h2>
+        <p>Scrivici: il tuo messaggio arriva direttamente su WhatsApp a Stefano.</p>
+      </div>
+      <div class="contact">
+        <form id="wa-form" action="#" onsubmit="return false">
+          <label>Nome
+            <input type="text" id="f-nome" placeholder="Il tuo nome" autocomplete="name">
+          </label>
+          <label>Telefono
+            <input type="tel" id="f-tel" placeholder="Il tuo numero" autocomplete="tel">
+          </label>
+          <label>Messaggio
+            <textarea id="f-msg" placeholder="Di cosa hai bisogno? Dimagrimento, schiena, postura…"></textarea>
+          </label>
+          <button class="btn block pulse" type="button" id="f-send">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+            Invia Richiesta su WhatsApp
+          </button>
+          <p class="fine">Si aprirà WhatsApp con il messaggio già pronto.</p>
+        </form>
+
+        <aside class="info">
+          <h3>Info utili</h3>
+          <dl>
+            <div><dt>Indirizzo</dt><dd>Via Flaminia, 51, 61036 Colli al Metauro (PU)</dd></div>
+            <div><dt>Telefono e WhatsApp</dt><dd><a href="tel:+393400017311">340 001 7311</a></dd></div>
+          </dl>
+          <h3>Orari di apertura</h3>
+          <table>
+            <tbody id="orari">
+              <tr data-d="1"><th scope="row">Lunedì</th><td>14:00 – 20:00</td></tr>
+              <tr data-d="2"><th scope="row">Martedì</th><td>08:00 – 14:00</td></tr>
+              <tr data-d="3"><th scope="row">Mercoledì</th><td>14:00 – 20:00</td></tr>
+              <tr data-d="4"><th scope="row">Giovedì</th><td>08:00 – 14:00</td></tr>
+              <tr data-d="5"><th scope="row">Venerdì</th><td>14:00 – 20:00</td></tr>
+              <tr data-d="6"><th scope="row">Sabato</th><td>08:00 – 11:00</td></tr>
+              <tr data-d="0" class="closed"><th scope="row">Domenica</th><td>Chiuso</td></tr>
+            </tbody>
+          </table>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="social">
+      <a href="https://www.facebook.com/FisiogymClinik22" target="_blank" rel="noopener">Facebook · FisiogymClinik22</a>
+      <a href="https://www.instagram.com/_fisiogym_" target="_blank" rel="noopener">Instagram · _fisiogym_</a>
+    </div>
+    <p>© 2026 Fisiogym Clinik. Tutti i diritti riservati.</p>
+    <p>Privacy: i dati inseriti nel modulo vengono usati solo per rispondere alla tua richiesta e non vengono condivisi con terzi.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  try {
+    var row = document.querySelector('#orari tr[data-d="' + new Date().getDay() + '"]');
+    if (row) row.classList.add('today');
+  } catch (e) {}
+  var btn = document.getElementById('f-send');
+  if (btn) btn.addEventListener('click', function () {
+    var n = document.getElementById('f-nome').value.trim();
+    var t = document.getElementById('f-tel').value.trim();
+    var m = document.getElementById('f-msg').value.trim();
+    var txt = 'Buongiorno Stefano, sono ' + (n || 'un nuovo cliente') + '.' +
+      (t ? ' Il mio numero è ' + t + '.' : '') +
+      (m ? ' ' + m : ' Vorrei richiedere una consulenza.');
+    window.open('https://wa.me/393400017311?text=' + encodeURIComponent(txt), '_blank', 'noopener');
+  });
+})();
+</script>
+</body>
+</html>
